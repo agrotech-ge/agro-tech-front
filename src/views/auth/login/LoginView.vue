@@ -21,7 +21,7 @@ const passwordFocused = ref(false);
           @focusout="emailFocused= false"
           v-model="email"
           :placeholder="!emailFocused ? 'ელ. ფოსტა' : ''"
-          class="placeholder placeholder-black font-medium hover:border-primary focus:outline-primary border-black border-2 rounded-[5px] w-full pt-[7px] pb-1.5 px-2.5"
+          class="placeholder hover:cursor-pointer focus:cursor-auto placeholder-black font-medium hover:border-primary focus:outline-primary border-black border-2 rounded-[5px] w-full pt-[7px] pb-1.5 px-2.5"
           type="text"/>
       <transition>
         <label
@@ -39,7 +39,7 @@ const passwordFocused = ref(false);
           @focusout="passwordFocused= false"
           v-model="password"
           :placeholder="!passwordFocused ? 'პაროლი' : ''"
-          class="placeholder-black hover:border-primary focus:outline-primary font-medium border-black border-2 rounded-[5px] w-full pt-[7px] pb-1.5 px-2.5"
+          class="placeholder-black hover:cursor-pointer focus:cursor-auto hover:border-primary focus:outline-primary font-medium border-black border-2 rounded-[5px] w-full pt-[7px] pb-1.5 px-2.5"
           :type="show ? 'text' : 'password'">
       <transition>
         <label
@@ -48,10 +48,12 @@ const passwordFocused = ref(false);
             class="text-primary absolute -top-1.5 left-3 px-1 text-[10px] font-bold bg-white">პაროლი</label>
       </transition>
     </div>
-    <router-link class="flex w-full justify-end font-medium  text-primary text-xs mb-5" to="/auth/recover-password-step-one">
+    <router-link class="flex w-full justify-end font-medium  text-primary text-xs mb-5"
+                 to="/auth/recover-password-step-one">
       დაგავიწყდა?
     </router-link>
-    <button class="bg-primary font-medium text-white py-[6.5px] rounded w-full hover:shadow-2xl mb-[15px]">შესვლა</button>
+    <button class="bg-primary font-medium text-white py-[6.5px] rounded w-full hover:shadow-2xl mb-[15px]">შესვლა
+    </button>
     <h3 class="flex justify-center mb-[15px]"> ან</h3>
     <router-link to="/auth/registration-step-one"
                  class="font-medium flex justify-center text-primary  py-[6.5px] rounded-[5px] hover:shadow-2xl hover:text-white hover:bg-primary w-full">
