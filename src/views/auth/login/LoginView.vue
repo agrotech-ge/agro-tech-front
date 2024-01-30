@@ -1,19 +1,5 @@
-<script setup>
-import {ref} from "vue";
-
-const show = ref(false);
-const email = ref('');
-const password = ref('');
-
-const togglePassword = () => {
-  show.value = !show.value;
-};
-
-const emailFocused = ref(false);
-const passwordFocused = ref(false);
-</script>
 <template>
-  <form method="post">
+  <form @submit.prevent="">
     <h1 class="text-[32px] mb-[50px] font-bold">ავტორიზაცია</h1>
     <div class="relative w-full mb-[50px]">
       <input
@@ -27,7 +13,7 @@ const passwordFocused = ref(false);
         <label
             v-if="emailFocused || email"
             :class="!emailFocused && email ? 'text-black' : ''"
-            class="text-primary absolute -top-1.5 left-3 px-1 text-[10px] font-bold bg-white">ელ. ფოსტა</label>
+            class="text-primary absolute -top-1.5 left-2.5 px-[5px] text-[10px] font-bold bg-white">ელ. ფოსტა</label>
       </transition>
     </div>
     <div class="relative w-full mb-5">
@@ -45,7 +31,7 @@ const passwordFocused = ref(false);
         <label
             v-if="passwordFocused || password"
             :class="!passwordFocused && password ? 'text-black' : ''"
-            class="text-primary absolute -top-1.5 left-3 px-1 text-[10px] font-bold bg-white">პაროლი</label>
+            class="text-primary absolute -top-1.5 left-2.5 px-[5px] text-[10px] font-bold bg-white">პაროლი</label>
       </transition>
     </div>
     <router-link class="flex w-full justify-end font-medium  text-primary text-xs mb-5"
@@ -62,6 +48,21 @@ const passwordFocused = ref(false);
   </form>
 </template>
 
+<script setup>
+import {ref} from "vue";
+
+const show = ref(false);
+const email = ref('');
+const password = ref('');
+
+const togglePassword = () => {
+  show.value = !show.value;
+};
+
+const emailFocused = ref(false);
+const passwordFocused = ref(false);
+</script>
+
 <style scoped>
 .v-enter-active,
 .v-leave-active {
@@ -70,10 +71,11 @@ const passwordFocused = ref(false);
 
 .v-enter-from,
 .v-leave-to {
-  opacity: 10;
+  opacity: 0;
   top: 10px;
   font-size: 16px;
   font-weight: 500;
+  color: black;
   background-color: transparent;
   padding: 0;
 }
