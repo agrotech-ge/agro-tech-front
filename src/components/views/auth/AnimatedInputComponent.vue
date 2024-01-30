@@ -6,7 +6,7 @@
         v-model="value"
         :placeholder="!focused ? placeholder : ''"
         class="w-full hover:cursor-pointer focus:cursor-auto placeholder-black font-medium hover:border-primary focus:outline-primary border-black border-2 rounded-[5px] p-[15px]"
-        :type="showPassword ? 'text' : 'password'"/>
+        :type="(!showPassword && showPasswordToggle) ? 'password' : 'text'"/>
     <transition>
       <label
           v-if="focused || value"
