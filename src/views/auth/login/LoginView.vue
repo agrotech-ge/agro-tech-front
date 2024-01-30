@@ -1,39 +1,8 @@
 <template>
   <form @submit.prevent="handleSubmit" class="flex flex-col justify-center items-center w-[550px]">
     <h1 class="text-primary text-2xl mb-[70px] font-bold uppercase">ავტორიზაცია</h1>
-    <div class="relative mb-[50px] w-full">
-      <input
-          @focusin="emailFocused = true"
-          @focusout="emailFocused = false"
-          v-model="email"
-          :placeholder="!emailFocused ? 'ელ. ფოსტა' : ''"
-          class="w-full hover:cursor-pointer focus:cursor-auto placeholder-black font-medium hover:border-primary focus:outline-primary border-black border-2 rounded-[5px] p-[15px]"
-          type="text"/>
-      <transition>
-        <label
-            v-if="emailFocused || email"
-            :class="!emailFocused && email ? '!text-black' : ''"
-            class="text-primary absolute -top-2 left-2.5 px-[5px] text-[10px] font-bold bg-white">ელ. ფოსტა</label>
-      </transition>
-    </div>
-    <div class="relative mb-[25px] w-full">
-      <img @click="togglePassword" class="absolute top-[15px] right-[15px] hover:cursor-pointer"
-           :src="showPassword ? '/src/assets/icons/auth/hide-password-icon.svg' : '/src/assets/icons/auth/show-password-icon.svg'"
-           alt="show-hide password icon">
-      <input
-          @focusin="passwordFocused = true"
-          @focusout="passwordFocused = false"
-          v-model="password"
-          :placeholder="!passwordFocused ? 'პაროლი' : ''"
-          class="w-full hover:cursor-pointer focus:cursor-auto placeholder-black font-medium hover:border-primary focus:outline-primary border-black border-2 rounded-[5px] p-[15px]"
-          :type="showPassword ? 'text' : 'password'"/>
-      <transition>
-        <label
-            v-if="passwordFocused || password"
-            :class="!passwordFocused && password ? '!text-black' : ''"
-            class="text-primary absolute -top-2 left-2.5 px-[5px] text-[10px] font-bold bg-white">პაროლი</label>
-      </transition>
-    </div>
+    <AnimatedInputComponent placeholder="ელ. ფოსტა" v-model="email" class="mb-[40px] w-full"/>
+    <AnimatedPasswordInputComponent placeholder="პაროლი" v-model="password" class="mb-[25px] w-full"/>
     <div class="flex justify-between items-center mb-[70px] w-full">
       <div class="flex items-center gap-x-[7px]">
         <img
@@ -61,20 +30,14 @@
 <script setup>
 import {ref} from "vue";
 import {useRouter} from "vue-router";
+import AnimatedInputComponent from "../../../components/views/auth/AnimatedInputComponent.vue";
+import AnimatedPasswordInputComponent from "../../../components/views/auth/AnimatedPasswordInputComponent.vue";
 
 const router = useRouter();
 
-const showPassword = ref(false);
 const checked = ref(false);
 const email = ref('');
 const password = ref('');
-
-const emailFocused = ref(false);
-const passwordFocused = ref(false);
-
-const togglePassword = () => {
-  showPassword.value = !showPassword.value;
-};
 
 const handleSubmit = async () => {
   try {
