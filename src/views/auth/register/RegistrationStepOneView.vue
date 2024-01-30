@@ -51,7 +51,7 @@ const formData = ref({
 const handleSubmit = async () => {
   try {
     console.log(formData)
-    await router.push('/');
+    await router.push('/auth/registration-step-two');
   } catch (error) {
     console.error(error);
   }
