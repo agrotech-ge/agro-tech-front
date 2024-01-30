@@ -1,5 +1,5 @@
 <template>
-  <form @submit.prevent="" class="flex flex-col justify-center items-center w-[550px]">
+  <form @submit.prevent="handleSubmit" class="flex flex-col justify-center items-center w-[550px]">
     <h1 class="text-primary text-2xl mb-[70px] font-bold uppercase">ავტორიზაცია</h1>
     <div class="relative mb-[50px] w-full">
       <input
@@ -18,7 +18,7 @@
     </div>
     <div class="relative mb-[25px] w-full">
       <img @click="togglePassword" class="absolute top-[15px] right-[15px] hover:cursor-pointer"
-           :src="show ? '/src/assets/icons/auth/hide-password-icon.svg' : '/src/assets/icons/auth/show-password-icon.svg'"
+           :src="showPassword ? '/src/assets/icons/auth/hide-password-icon.svg' : '/src/assets/icons/auth/show-password-icon.svg'"
            alt="show-hide password icon">
       <input
           @focusin="passwordFocused = true"
@@ -26,7 +26,7 @@
           v-model="password"
           :placeholder="!passwordFocused ? 'პაროლი' : ''"
           class="w-full hover:cursor-pointer focus:cursor-auto placeholder-black font-medium hover:border-primary focus:outline-primary border-black border-2 rounded-[5px] p-[15px]"
-          :type="show ? 'text' : 'password'"/>
+          :type="showPassword ? 'text' : 'password'"/>
       <transition>
         <label
             v-if="passwordFocused || password"
@@ -60,18 +60,29 @@
 
 <script setup>
 import {ref} from "vue";
+import {useRouter} from "vue-router";
 
-const show = ref(false);
-const checked = ref(false)
+const router = useRouter();
+
+const showPassword = ref(false);
+const checked = ref(false);
 const email = ref('');
 const password = ref('');
 
-const togglePassword = () => {
-  show.value = !show.value;
-};
-
 const emailFocused = ref(false);
 const passwordFocused = ref(false);
+
+const togglePassword = () => {
+  showPassword.value = !showPassword.value;
+};
+
+const handleSubmit = async () => {
+  try {
+    await router.push('/');
+  } catch (error) {
+    console.error(error);
+  }
+};
 </script>
 
 <style scoped>
