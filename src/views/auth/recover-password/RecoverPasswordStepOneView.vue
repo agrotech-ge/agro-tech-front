@@ -1,33 +1,36 @@
+<template>
+  <form @submit.prevent="handleSubmit" class="flex flex-col justify-center items-center w-[550px]">
+    <h1 class="text-primary text-2xl font-bold uppercase">რეგისტრაცია</h1>
+    <div class="flex flex-col gap-y-[40px] w-full my-[70px]">
+      <AnimatedInputComponent :placeholder="'ელ. ფოსტა'" v-model="email"/>
+      <div class="flex gap-x-2.5">
+        <AnimatedInputComponent :placeholder="'პინკოდი'" v-model="pinCode"/>
+        <button class="w-1/3 bg-primary font-medium text-white py-[15px] px-[22.5px] rounded-[5px] hover:shadow-xl">
+          გაგზავნა
+        </button>
+      </div>
+    </div>
+    <button class="bg-primary font-medium text-white py-[15px] rounded-[5px] w-full hover:shadow-xl mb-[25px]">
+      შემდეგი
+    </button>
+  </form>
+</template>
+
 <script setup>
 import {ref} from "vue";
 import {useRouter} from "vue-router";
+import AnimatedInputComponent from "../../../components/views/auth/AnimatedInputComponent.vue";
 
 const router = useRouter();
 
 const email = ref('')
+const pinCode = ref('')
 
-const goBack = () => {
-  router.go(-1);
-}
+const handleSubmit = async () => {
+  try {
+    await router.push('/auth/recover-password-step-two');
+  } catch (error) {
+    console.error(error);
+  }
+};
 </script>
-
-<template>
-  <div class="relative">
-    <img @click="goBack" class="cursor-pointer absolute top-10 left-3" src="../../../assets/icons/auth/back-arrow.svg"
-         alt="back arrow"/>
-    <form method="post" @submit.prevent class="w-[243px] flex flex-col items-center gap-y-[50px]">
-      <h1 class="text-[32px] font-semibold whitespace-nowrap">პაროლის აღდგენა</h1>
-      <div class="relative w-full">
-        <input
-            v-model="email"
-            class="placeholder-black focus:outline-primary border border-black rounded-[5px] w-full pt-[7px] pb-1.5 px-2.5"
-            type="text"/>
-        <label class="absolute -top-3.5 left-2.5 px-1 bg-white">ელ. ფოსტა</label>
-      </div>
-      <router-link to="/auth/recover-password-step-two"
-                   class="mt-2.5 text-center py-[6.5px] rounded-[5px] hover:shadow-2xl text-white bg-primary w-full">
-        შემდეგი
-      </router-link>
-    </form>
-  </div>
-</template>
