@@ -24,7 +24,7 @@
           @focusin="passwordFocused = true"
           @focusout="passwordFocused = false"
           v-model="password"
-          :placeholder="!password ? 'პაროლი' : ''"
+          :placeholder="!passwordFocused ? 'პაროლი' : ''"
           class="w-full hover:cursor-pointer focus:cursor-auto placeholder-black font-medium hover:border-primary focus:outline-primary border-black border-2 rounded-[5px] p-[15px]"
           :type="show ? 'text' : 'password'"/>
       <transition>
@@ -48,11 +48,11 @@
         დაგავიწყდა?
       </router-link>
     </div>
-    <button class="bg-primary font-medium text-white py-[15px] rounded-[5px] w-full hover:shadow-2xl mb-[25px]">შესვლა
+    <button class="bg-primary font-medium text-white py-[15px] rounded-[5px] w-full hover:shadow-xl mb-[25px]">შესვლა
     </button>
     <h3 class="flex justify-center mb-[25px] font-medium uppercase">ან</h3>
     <router-link to="/auth/registration-step-one"
-                 class="font-medium border border-primary flex justify-center text-primary  py-[15px] rounded-[5px] hover:shadow-2xl hover:text-white hover:bg-primary w-full">
+                 class="font-medium border border-primary flex justify-center text-primary  py-[15px] rounded-[5px] hover:shadow-xl hover:text-white hover:bg-primary w-full">
       რეგისტრაცია
     </router-link>
   </form>
