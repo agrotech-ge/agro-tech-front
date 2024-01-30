@@ -1,21 +1,28 @@
 <template>
   <div class="relative">
     <input
-        @focusin="focused = true"
-        @focusout="focused = false"
         v-model="value"
         :placeholder="!focused ? placeholder : ''"
-        class="w-full hover:cursor-pointer focus:cursor-auto placeholder-black font-medium hover:border-primary focus:outline-primary border-black border-2 rounded-[5px] p-[15px]"
-        :type="(!showPassword && showPasswordToggle) ? 'password' : 'text'"/>
+        :type="(!showPassword && showPasswordToggle) ? 'password' : 'text'"
+        class="w-full border-2 border-black font-medium placeholder-black rounded-[5px] p-[15px] hover:border-primary hover:cursor-pointer focus:outline-primary focus:cursor-auto"
+        @focusin="focused = true"
+        @focusout="focused = false"
+    />
     <transition>
       <label
           v-if="focused || value"
           :class="!focused && value ? '!text-black' : ''"
-          class="text-primary absolute -top-2 left-2.5 px-[5px] text-[10px] font-bold bg-white" v-text="placeholder"/>
+          class="absolute -top-2 bg-white font-bold text-primary left-2.5 px-[5px] text-[10px]"
+          v-text="placeholder"
+      />
     </transition>
-    <img @click="togglePasswordVisibility" class="absolute top-[15px] right-[15px] hover:cursor-pointer"
-         :src="showPassword ? '/src/assets/icons/auth/hide-password-icon.svg' : '/src/assets/icons/auth/show-password-icon.svg'"
-         alt="show-hide password icon" v-if="showPasswordToggle"/>
+    <img
+        v-if="showPasswordToggle"
+        @click="togglePasswordVisibility"
+        class="absolute top-[15px] right-[15px] hover:cursor-pointer"
+        :src="showPassword ? '/src/assets/icons/auth/hide-password-icon.svg' : '/src/assets/icons/auth/show-password-icon.svg'"
+        alt="show-hide password icon"
+    />
   </div>
 </template>
 
