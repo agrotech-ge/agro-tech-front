@@ -1,69 +1,59 @@
+<template>
+  <form @submit.prevent="handleSubmit" class="flex flex-col justify-center items-center w-[550px]">
+    <h1 class="text-primary text-2xl font-bold uppercase">რეგისტრაცია</h1>
+    <div class="flex flex-col gap-y-[40px] w-full my-[70px]">
+      <template v-for="(field, index) in formFields" :key="index">
+        <AnimatedInputComponent :placeholder="field.placeholder" v-model="formData[field.model]"/>
+      </template>
+      <div class="flex gap-x-2.5">
+        <template v-for="(field, index) in additionalFields" :key="index">
+          <AnimatedInputComponent :placeholder="field.placeholder" v-model="formData[field.model]"/>
+        </template>
+        <button class="w-1/3 bg-primary font-medium text-white py-[15px] px-[22.5px] rounded-[5px] hover:shadow-xl">
+          გაგზავნა
+        </button>
+      </div>
+    </div>
+    <button class="bg-primary font-medium text-white py-[15px] rounded-[5px] w-full hover:shadow-xl mb-[25px]">
+      შემდეგი
+    </button>
+  </form>
+</template>
+
 <script setup>
 import {ref} from "vue";
 import {useRouter} from "vue-router";
+import AnimatedInputComponent from "../../../components/views/auth/AnimatedInputComponent.vue";
 
 const router = useRouter();
 
-const firstName = ref('')
-const lastName = ref('')
-const phoneNumber = ref('')
-const email = ref('')
-const userType = ref('')
+const formFields = [
+  {placeholder: "სახელი", model: "firstName"},
+  {placeholder: "გვარი", model: "lastName"},
+  {placeholder: "ქალაქი", model: "city"},
+  {placeholder: "უბანი", model: "distinct"},
+  {placeholder: "ელ. ფოსტა", model: "email"}
+];
 
-const goBack = () => {
-  router.go(-1);
-}
+const additionalFields = [
+  {placeholder: "პინკოდი", model: "pinCode"}
+];
+
+const formData = ref({
+  firstName: '',
+  lastName: '',
+  city: '',
+  distinct: '',
+  email: '',
+  pinCode: ''
+});
+
+const handleSubmit = async () => {
+  try {
+    console.log(formData)
+    await router.push('/');
+  } catch (error) {
+    console.error(error);
+  }
+};
 </script>
-
-<template>
-  <div class="relative">
-    <img @click="goBack" class="cursor-pointer absolute top-10 left-3" src="../../../assets/icons/auth/back-arrow.svg"
-         alt="back arrow"/>
-    <form method="post" @submit.prevent class="w-[243px] flex flex-col items-center gap-y-[50px]">
-      <h1 class="text-[32px] font-semibold">რეგისტრაცია</h1>
-      <div class="relative w-full">
-        <input
-            v-model="firstName"
-            class="placeholder-black focus:outline-primary border border-black rounded-[5px] w-full pt-[7px] pb-1.5 px-2.5"
-            type="text"/>
-        <label class="absolute -top-3.5 left-2.5 px-1 bg-white">სახელი</label>
-      </div>
-      <div class="relative w-full">
-        <input
-            v-model="lastName"
-            class="placeholder-black focus:outline-primary border border-black rounded-[5px] w-full pt-[7px] pb-1.5 px-2.5"
-            type="text"/>
-        <label class="absolute -top-3.5 left-2.5 px-1 bg-white">გვარი</label>
-      </div>
-      <div class="relative w-full">
-        <input
-            v-model="phoneNumber"
-            class="placeholder-black focus:outline-primary border border-black rounded-[5px] w-full pt-[7px] pb-1.5 px-2.5"
-            type="text"/>
-        <label class="absolute -top-3.5 left-2.5 px-1 bg-white">ტელ. ნომერი</label>
-      </div>
-      <div class="relative w-full">
-        <input
-            v-model="email"
-            class="placeholder-black focus:outline-primary border border-black rounded-[5px] w-full pt-[7px] pb-1.5 px-2.5"
-            type="text"/>
-        <label class="absolute -top-3.5 left-2.5 px-1 bg-white">ელ. ფოსტა</label>
-      </div>
-      <div class="w-full rounded-[5px] gap-y-[18px] flex flex-col items-start border border-black pl-2.5 py-[13px]">
-        <div class="flex items-center gap-x-2.5">
-          <input v-model="userType" checked type="radio" value="student" name="type"
-                 class="checked:accent-primary"><label
-            class="text-sm">მოსწავლე</label>
-        </div>
-        <div class="flex items-center gap-x-2.5">
-          <input v-model="userType" type="radio" name="type" value="teacher" class="checked:accent-primary"><label
-            class="text-sm">მასწავლებელი</label>
-        </div>
-      </div>
-      <router-link to="/auth/registration-step-two"
-                   class="mt-2.5 text-center py-[6.5px] rounded-[5px] hover:shadow-2xl text-white bg-primary w-full">
-        შემდეგი
-      </router-link>
-    </form>
-  </div>
-</template>
