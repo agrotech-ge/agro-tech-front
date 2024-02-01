@@ -1,5 +1,5 @@
 <template>
-  <form @submit.prevent="handleSubmit" class="flex flex-col items-center justify-center w-[550px]">
+  <form @submit.prevent="validateFormData" class="flex flex-col items-center justify-center w-[550px]">
     <h1 class="text-2xl font-bold uppercase text-primary">რეგისტრაცია</h1>
     <div class="flex w-full flex-col gap-y-[40px] my-[70px]">
       <template v-for="(field, index) in formFields" :key="index">
@@ -14,46 +14,21 @@
         </button>
       </div>
     </div>
-    <button class="w-full font-medium text-white bg-primary py-[15px] rounded-[5px] mb-[25px] hover:shadow-xl">
+    <button type="submit"
+            class="w-full font-medium text-white bg-primary py-[15px] rounded-[5px] mb-[25px] hover:shadow-xl">
       შემდეგი
     </button>
   </form>
 </template>
 
 <script setup>
-import {ref} from "vue";
-import {useRouter} from "vue-router";
 import AnimatedInputComponent from "../../../components/views/auth/AnimatedInputComponent.vue";
+import useRegister from "../../../composables/useRegister";
 
-const router = useRouter();
-
-const formFields = [
-  {placeholder: "სახელი", model: "firstName"},
-  {placeholder: "გვარი", model: "lastName"},
-  {placeholder: "ქალაქი", model: "city"},
-  {placeholder: "უბანი", model: "distinct"},
-  {placeholder: "ელ. ფოსტა", model: "email"}
-];
-
-const additionalFields = [
-  {placeholder: "პინკოდი", model: "pinCode"}
-];
-
-const formData = ref({
-  firstName: '',
-  lastName: '',
-  city: '',
-  distinct: '',
-  email: '',
-  pinCode: ''
-});
-
-const handleSubmit = async () => {
-  try {
-    console.log(formData)
-    await router.push('/auth/registration-step-two');
-  } catch (error) {
-    console.error(error);
-  }
-};
+const {
+  formFields,
+  additionalFields,
+  formData,
+  validateFormData
+} = useRegister();
 </script>
