@@ -28,21 +28,13 @@
 </template>
 
 <script setup>
-import {ref} from "vue";
-import {useRouter} from "vue-router";
 import AnimatedInputComponent from "../../../components/views/auth/AnimatedInputComponent.vue";
+import useLogin from "../../../composables/useLogin";
 
-const router = useRouter();
-
-const checked = ref(false);
-const email = ref('');
-const password = ref('');
-
-const handleSubmit = async () => {
-  try {
-    await router.push('/auth/login');
-  } catch (error) {
-    console.error(error);
-  }
-};
+const {
+  checked,
+  email,
+  password,
+  handleSubmit,
+} = useLogin()
 </script>
