@@ -4,7 +4,7 @@ import NavLinks from "@/components/main/NavLinks.vue";
 import LangSwitch from "@/components/main/LangSwitcher.vue";
 </script>
 <template>
-  <header class="px-14 py-12 flex items-center justify-between">
+  <header class="px-14 py-10 flex items-center justify-between">
     <logo/>
     <nav-links/>
     <lang-switch/>
