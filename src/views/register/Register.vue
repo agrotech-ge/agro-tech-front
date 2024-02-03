@@ -9,7 +9,8 @@
         <template v-for="(field, index) in additionalFields" :key="index">
           <AnimatedInputComponent :placeholder="field.placeholder" v-model="formData[field.model]"/>
         </template>
-        <button class="w-1/3 font-medium text-white bg-primary py-[15px] px-[22.5px] rounded-[5px] hover:shadow-xl">
+        <button type="button"
+                class="w-1/3 font-medium text-white bg-primary py-[15px] px-[22.5px] rounded-[5px] hover:shadow-xl">
           გაგზავნა
         </button>
       </div>

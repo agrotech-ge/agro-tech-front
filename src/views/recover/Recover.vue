@@ -5,12 +5,12 @@
       <AnimatedInputComponent :placeholder="'ელ. ფოსტა'" v-model="email"/>
       <div class="flex gap-x-2.5">
         <AnimatedInputComponent :placeholder="'პინკოდი'" v-model="pinCode"/>
-        <button class="w-1/3 font-medium text-white bg-primary py-[15px] px-[22.5px] rounded-[5px] hover:shadow-xl">
+        <button type="button" class="w-1/3 font-medium text-white bg-primary py-[15px] px-[22.5px] rounded-[5px] hover:shadow-xl">
           გაგზავნა
         </button>
       </div>
     </div>
-    <button class="w-full font-medium text-white bg-primary py-[15px] rounded-[5px] mb-[25px] hover:shadow-xl">
+    <button type="submit" class="w-full font-medium text-white bg-primary py-[15px] rounded-[5px] mb-[25px] hover:shadow-xl">
       შემდეგი
     </button>
   </form>
@@ -28,7 +28,7 @@ const pinCode = ref('')
 
 const handleSubmit = async () => {
   try {
-    await router.push('/auth/recover-step-two');
+    await router.push('/recover2');
   } catch (error) {
     console.error(error);
   }

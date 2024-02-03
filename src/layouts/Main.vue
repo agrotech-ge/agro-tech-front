@@ -4,7 +4,7 @@ import Footer from "../components/main/Footer.vue";
 </script>
 <template>
   <Header/>
-  <main class="flex justify-center items-center">
+  <main class="relative">
     <RouterView/>
   </main>
   <Footer/>
