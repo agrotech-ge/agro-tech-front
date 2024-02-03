@@ -35,6 +35,10 @@ const routes = [
         component: () => import('@/layouts/MainLayout.vue'),
         children: [],
     },
+    {
+        path: '/contact',
+        component: () => import('../views/contact/ContactView.vue'),
+    }
 ];
 
 export default routes;
