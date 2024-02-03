@@ -32,17 +32,17 @@ export default function useRegister() {
     const validateFormData = () => {
         const valid = Object.values(formData.value).every(d => d);
         if (valid) {
-            router.push('/auth/registration-step-two');
+            router.push('/auth/registration-step-two/' + formData.value['email']);
         } else {
             alert("შეავსეთ ყველა ველი!")
         }
     }
 
-    const handleRegister = async () => {
+    const handleRegister = async (email) => {
         if (password.value !== repeatPassword.value) {
             alert('პაროლები არ ემთხვევა!')
         } else {
-            createUserWithEmailAndPassword(auth, formData['email'], password.value)
+            createUserWithEmailAndPassword(auth, email, password.value)
                 .then((response) =>
                     console.log(response))
                 .catch((error) => console.log(error))

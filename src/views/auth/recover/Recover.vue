@@ -28,7 +28,7 @@ const pinCode = ref('')
 
 const handleSubmit = async () => {
   try {
-    await router.push('/auth/recover-password-step-two');
+    await router.push('/auth/recover-step-two');
   } catch (error) {
     console.error(error);
   }

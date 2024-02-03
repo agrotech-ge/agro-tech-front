@@ -14,11 +14,13 @@
 <script setup>
 import AnimatedInputComponent from "../../../components/views/auth/AnimatedInputComponent.vue";
 import useRegister from "../../../composables/useRegister";
+import {useRoute} from "vue-router";
 
+const route = useRoute()
 
 const {
   password,
   repeatPassword,
   handleRegister
-} = useRegister()
+} = useRegister(route.params.email)
 </script>
