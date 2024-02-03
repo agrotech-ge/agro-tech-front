@@ -12,8 +12,8 @@
 </template>
 
 <script setup>
-import AnimatedInputComponent from "../../../components/views/auth/AnimatedInputComponent.vue";
-import useRegister from "../../../composables/useRegister";
+import AnimatedInputComponent from "../../components/auth/AnimatedInput.vue";
+import useRegister from "../../composables/useRegister.js";
 import {useRoute} from "vue-router";
 
 const route = useRoute()

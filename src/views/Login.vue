@@ -28,8 +28,8 @@
 </template>
 
 <script setup>
-import AnimatedInputComponent from "../../../components/views/auth/AnimatedInputComponent.vue";
-import useLogin from "../../../composables/useLogin";
+import AnimatedInputComponent from "../components/auth/AnimatedInput.vue";
+import useLogin from "../composables/useLogin.js";
 
 const {
   checked,

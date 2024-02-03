@@ -14,7 +14,7 @@
 <script setup>
 import {ref} from "vue";
 import {useRouter} from "vue-router";
-import AnimatedInputComponent from "../../../components/views/auth/AnimatedInputComponent.vue";
+import AnimatedInputComponent from "../../components/auth/AnimatedInput.vue";
 
 const router = useRouter();
 const newPassword = ref('');

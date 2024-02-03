@@ -20,7 +20,7 @@
         v-if="showPasswordToggle"
         @click="togglePasswordVisibility"
         class="absolute top-[15px] right-[15px] hover:cursor-pointer"
-        :src="showPassword ? '/src/assets/icons/auth/hide-password-icon.svg' : '/src/assets/icons/auth/show-password-icon.svg'"
+        :src="showPassword ? '/src/assets/icons/auth/hide-password.svg' : '/src/assets/icons/auth/show-password.svg'"
         alt="show-hide password icon"
     />
   </div>

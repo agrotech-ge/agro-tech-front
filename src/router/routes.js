@@ -1,42 +1,58 @@
 const routes = [
     {
         path: '/',
-        component: () => import('@/layouts/AuthLayout.vue'),
+        component: () => import('@/layouts/Auth.vue'),
         children: [
             {
                 path: 'login',
                 name: 'Login',
-                component: () => import('@/views/auth/login/Login.vue'),
+                component: () => import('@/views/Login.vue'),
             },
             {
                 path: 'register',
                 name: 'Register',
-                component: () => import('@/views/auth/register/Register.vue'),
+                component: () => import('@/views/register/Register.vue'),
             },
             {
                 path: 'register2/:email',
                 name: 'Register2',
-                component: () => import('@/views/auth/register/Register2.vue'),
+                component: () => import('@/views/register/Register2.vue'),
             },
             {
                 path: 'recover',
                 name: 'Recover',
-                component: () => import('@/views/auth/recover/Recover.vue'),
+                component: () => import('@/views/recover/Recover.vue'),
             },
             {
                 path: 'recover2',
                 name: 'Recover2',
-                component: () => import('@/views/auth/recover/Recover2.vue'),
+                component: () => import('@/views/recover/Recover2.vue'),
             },
         ],
     },
     {
         path: '/main',
-        component: () => import('@/layouts/MainLayout.vue'),
+        component: () => import('@/layouts/Main.vue'),
         children: [
             {
-                path: '/contact',
-                component: () => import('../views/contact/ContactView.vue'),
+                path: '',
+                name: 'Main',
+                component: () => import('@/views/Main.vue'),
+            },
+            {
+                path: 'listings',
+                name: 'Listings',
+                component: () => import('@/views/Listings.vue'),
+            },
+            {
+                path: 'about',
+                name: 'About',
+                component: () => import('@/views/About.vue'),
+            },
+            {
+                path: 'contact',
+                name: 'Contact',
+                component: () => import('@/views/Contact.vue'),
             },
         ],
     }
