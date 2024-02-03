@@ -5,27 +5,27 @@ const routes = [
         children: [
             {
                 path: 'login',
-                name: 'AuthLogin',
+                name: 'Login',
                 component: () => import('@/views/auth/login/Login.vue'),
             },
             {
                 path: 'register',
-                name: 'AuthRegister',
+                name: 'Register',
                 component: () => import('@/views/auth/register/Register.vue'),
             },
             {
                 path: 'register2/:email',
-                name: 'AuthRegister2',
+                name: 'Register2',
                 component: () => import('@/views/auth/register/Register2.vue'),
             },
             {
                 path: 'recover',
-                name: 'AuthRecover',
+                name: 'Recover',
                 component: () => import('@/views/auth/recover/Recover.vue'),
             },
             {
                 path: 'recover2',
-                name: 'AuthRecover2',
+                name: 'Recover2',
                 component: () => import('@/views/auth/recover/Recover2.vue'),
             },
         ],
@@ -33,11 +33,12 @@ const routes = [
     {
         path: '/main',
         component: () => import('@/layouts/MainLayout.vue'),
-        children: [],
-    },
-    {
-        path: '/contact',
-        component: () => import('../views/contact/ContactView.vue'),
+        children: [
+            {
+                path: '/contact',
+                component: () => import('../views/contact/ContactView.vue'),
+            },
+        ],
     }
 ];
 
