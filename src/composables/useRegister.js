@@ -1,7 +1,7 @@
 import {ref} from "vue"
 import {auth} from "../firebase/init"
 import {createUserWithEmailAndPassword, sendEmailVerification} from 'firebase/auth'
-
+import axios from "/src/interseptors/axios"
 const useRegister = () => {
     const fields = [
         {placeholder: "სახელი", model: "firstName"},
@@ -30,6 +30,17 @@ const useRegister = () => {
             await sendEmailVerification(userCredential.user)
             console.log(data.value)
             console.log(userCredential.user.uid)
+            axios.post("/add", {
+                "fireBaseId": userCredential.user.uid,
+                "firstName": data.value.firstName,
+                "lastName": data.value.lastName,
+                "city": data.value.city,
+                "phoneNumber": data.value.phoneNumber,
+                "email": userCredential.user.email
+            }).then((response) => {
+                console.log(response.data)
+            }).catch((err) => console.log(err))
+
         } catch (error) {
             console.log(error)
         }
