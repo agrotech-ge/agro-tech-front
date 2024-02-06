@@ -1,13 +1,25 @@
 <template>
   <div class="relative">
-    <input
-        v-model="value"
-        :placeholder="!focused ? placeholder : ''"
-        :type="(!showPassword && showPasswordToggle) ? 'password' : 'text'"
-        class="w-full border-2 border-black font-medium placeholder-black rounded-[5px] p-[15px] hover:border-primary hover:cursor-pointer focus:outline-primary focus:cursor-auto"
-        @focusin="focused = true"
-        @focusout="focused = false"
-    />
+    <template v-if="!isTextarea">
+      <input
+          v-model="value"
+          :placeholder="!focused ? placeholder : ''"
+          :type="(!showPassword && showPasswordToggle) ? 'password' : 'text'"
+          class="w-full border-2 border-black font-medium placeholder-black rounded-[5px] p-[15px] hover:border-primary hover:cursor-pointer focus:outline-primary focus:cursor-auto"
+          @focusin="focused = true"
+          @focusout="focused = false"
+      />
+    </template>
+    <template v-else>
+      <textarea
+          v-model="value"
+          :placeholder="!focused ? placeholder : ''"
+          :style="{ height: height }"
+          class="w-full border-2 border-black font-medium placeholder-black rounded-[5px] p-[15px] hover:border-primary hover:cursor-pointer focus:outline-primary focus:cursor-auto"
+          @focusin="focused = true"
+          @focusout="focused = false"
+      ></textarea>
+    </template>
     <transition>
       <label
           v-if="focused || value"
@@ -17,7 +29,7 @@
       />
     </transition>
     <img
-        v-if="showPasswordToggle"
+        v-if="showPasswordToggle && !isTextarea"
         @click="togglePasswordVisibility"
         class="absolute top-[15px] right-[15px] hover:cursor-pointer"
         :src="showPassword ? '/src/assets/icons/hide-password.svg' : '/src/assets/icons/show-password.svg'"
@@ -27,26 +39,34 @@
 </template>
 
 <script setup>
-import {ref} from "vue";
+import {ref} from "vue"
 
 defineProps({
   placeholder: {
     type: String,
-    required: true,
+    required: true
   },
   showPasswordToggle: {
     type: Boolean,
-    default: false,
+    default: false
   },
-});
+  isTextarea: {
+    type: Boolean,
+    default: false
+  },
+  height: {
+    type: String,
+    default: 'auto'
+  }
+})
 
-const showPassword = ref(false);
-const value = defineModel();
-const focused = ref(false);
+const showPassword = ref(false)
+const value = defineModel()
+const focused = ref(false)
 
 const togglePasswordVisibility = () => {
-  showPassword.value = !showPassword.value;
-};
+  showPassword.value = !showPassword.value
+}
 </script>
 
 <style scoped>
@@ -67,3 +87,4 @@ const togglePasswordVisibility = () => {
   padding: 0;
 }
 </style>
+
