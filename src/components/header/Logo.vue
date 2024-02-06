@@ -1,8 +1,7 @@
 <template>
-  <router-link to="/main" class="flex items-center gap-x-2">
-    <img src="/src/assets/logos/agortech.svg" alt="agro tech logo">
-    <p class="text-primary text-4xl">
-      აგრო<span class="text-secondary" v-text="'ტექი'"/>
-    </p>
+  <router-link to="/" class="flex items-center gap-x-2 font-medium">
+    <img class="h-16 w-16" src="/src/assets/logos/agro-tech.svg" alt="agro tech logo">
+
+    <p class="text-5xl text-primary">აგრო<span class="text-secondary">ტექი</span></p>
   </router-link>
 </template>

@@ -1,12 +1,15 @@
 <script setup>
 import Logo from "/src/components/header/Logo.vue";
-import NavLinks from "/src/components/header/NavLinks.vue";
-import LangSwitch from "/src/components/header/LangSwitcher.vue";
+import NavigationLinks from "/src/components/header/NavigationLinks.vue";
+import LanguageSwitcher from "/src/components/header/LanguageSwitcher.vue";
 </script>
+
 <template>
-  <header class="px-14 py-10 flex items-center justify-between">
+  <header class="flex items-center justify-between px-14 py-10">
     <logo/>
-    <nav-links/>
-    <lang-switch/>
+
+    <navigation-links/>
+
+    <language-switcher/>
   </header>
 </template>
