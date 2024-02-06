@@ -20,16 +20,7 @@
             <img src="/src/assets/logos/facebook.svg" alt="facebook logo">
           </div>
         </div>
-        <div class="flex flex-col gap-y-8">
-          <p class="text-white text-[40px]">ნავიგაცია</p>
-          <nav class="flex flex-col gap-y-7">
-            <router-link
-                v-for="(route, index) in routes" :key="index"
-                :to="route.path"
-                class="text-xl font-medium text-primary"
-                v-text="route.title"/>
-          </nav>
-        </div>
+        <navigation-links/>
       </div>
     </div>
     <div class="w-full border-t-2 border-t-[#434343] pt-5">
@@ -39,6 +30,7 @@
 </template>
 <script setup>
 import {ref} from "vue";
+import NavigationLinks from "./NavigationLinks.vue";
 
 const routes = ref([
   {
