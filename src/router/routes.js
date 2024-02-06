@@ -27,7 +27,7 @@ const routes = [
     },
     {
         path: '/',
-        component: () => import('/src/layouts/Main.vue'),
+        component: () => import('/src/layouts/MainLayout.vue'),
         children: [
             {
                 path: '',
