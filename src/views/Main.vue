@@ -89,7 +89,7 @@ const members = ref([
 </script>
 
 <template>
-  <img src="@/assets/images/main-bg.svg" class="w-full aspect-auto" alt="main bg">
+  <img src="/src/assets/images/main-bg.svg" class="w-full aspect-auto" alt="main bg">
   <div class="top-40 left-20 absolute font-medium text-white">
     <p class="px-8 py-3 bg-black bg-opacity-70 text-[64px] w-fit">აგროტექი</p>
     <p class="px-8 py-3 my-10 bg-black bg-opacity-70 text-[40px]">ტრაქტორების

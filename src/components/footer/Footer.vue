@@ -1,7 +1,7 @@
 <template>
   <footer class="px-14 py-14 bg-[#2E2E2E] flex flex-col gap-y-10">
     <div class="flex gap-x-14 items-start">
-      <img src="@/assets/logos/agortech.svg" alt="agro tech logo">
+      <img src="/src/assets/logos/agortech.svg" alt="agro tech logo">
       <div class="flex w-full justify-between">
         <div class="text-white flex flex-col gap-y-8">
           <p class="font-medium text-[40px]">
