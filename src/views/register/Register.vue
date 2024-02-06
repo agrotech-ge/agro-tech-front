@@ -1,5 +1,5 @@
 <template>
-  <form @submit.prevent="validateFormData" class="flex flex-col items-center justify-center w-[550px]">
+  <form @submit.prevent="handleRegister" class="flex flex-col items-center justify-center w-[550px]">
     <h1 class="text-2xl font-bold uppercase text-primary">რეგისტრაცია</h1>
     <div class="flex w-full flex-col gap-y-[40px] my-[70px]">
       <template v-for="(field, index) in formFields" :key="index">
@@ -30,6 +30,6 @@ const {
   formFields,
   additionalFields,
   formData,
-  validateFormData
+  handleRegister
 } = useRegister();
 </script>

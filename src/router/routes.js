@@ -12,7 +12,7 @@ const routes = [
                 component: () => import('/src/views/register/Register.vue'),
             },
             {
-                path: 'register2/:email',
+                path: 'register2',
                 component: () => import('/src/views/register/Register2.vue'),
             },
             {
