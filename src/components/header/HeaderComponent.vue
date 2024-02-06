@@ -1,7 +1,7 @@
 <script setup>
-import Logo from "/src/components/header/Logo.vue";
-import NavigationLinks from "/src/components/header/NavigationLinks.vue";
-import LanguageSwitcher from "/src/components/header/LanguageSwitcher.vue";
+import Logo from "/src/components/header/Logo.vue"
+import NavigationLinks from "/src/components/header/NavigationLinks.vue"
+import LanguageSwitcher from "/src/components/header/LanguageSwitcher.vue"
 </script>
 
 <template>

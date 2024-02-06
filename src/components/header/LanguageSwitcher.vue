@@ -1,15 +1,17 @@
 <script setup>
 import {ref} from "vue";
 
-const lang = ref('ka')
+const language = ref('ka')
 </script>
 
 <template>
   <div class="flex items-center gap-x-2 font-medium">
-    <p @click="lang = 'ka'" :class="{'text-primary':lang === 'ka'}" class="font-semibold cursor-pointer"
+    <p @click="language = 'ka'" :class="{'text-primary':language === 'ka'}" class="cursor-pointer font-semibold"
        v-text="'ქარ'"/>
-    <div class="w-[1px] h-5 bg-black"/>
-    <p @click="lang = 'en'" :class="{'text-primary':lang === 'en'}" class="font-semibold cursor-pointer"
+
+    <div class="h-5 bg-black w-0.5"/>
+
+    <p @click="language = 'en'" :class="{'text-primary':language === 'en'}" class="cursor-pointer font-semibold"
        v-text="'ინგ'"/>
   </div>
 </template>
