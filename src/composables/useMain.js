@@ -85,7 +85,40 @@ const useMain = () => {
         }
     ])
 
-    return {tractors, members}
+    const _members = ref([
+        {
+            photo: '/src/assets/images/members/member1.svg',
+            name: 'ნიკოლოზ კაციტაძე',
+            description: 'ნიკოლოზ კაციტაძე არის ჯგუფის ლიდერი, მენტორი და იდეის ავტორი.'
+        },
+        {
+            photo: '/src/assets/images/members/member2.svg',
+            name: 'ლაშა გაგნიძე',
+            description: 'ლაშა გაგნიძე არის ჯგუფის წევრი, რომელსაც ეკუთვნის ამ  საიტის front და back მხარეები.'
+        },
+        {
+            photo: '/src/assets/images/members/member3.svg',
+            name: 'კარლო ცუცქირიძე',
+            description: 'კარლო ცუცქირიძე არის ჯგუფის წევრი, რომელსაც ეკუთვნის ამ საიტის front და back მხარეები.'
+        },
+        {
+            photo: '/src/assets/images/members/member4.svg',
+            name: 'სანდრო ღუღუნიშვილი',
+            description: 'back-end დეველოპერი'
+        },
+        {
+            photo: '/src/assets/images/members/member5.svg',
+            name: 'ვახო ბარათაშვილი',
+            description: 'back-end დეველოპერი, UI/UX დიზაინერი'
+        },
+        {
+            photo: '/src/assets/images/members/member6.svg',
+            name: 'ანდრია ბიბიაშვილი',
+            description: 'back-end დეველოპერი'
+        }
+    ])
+
+    return {tractors, members, _members}
 }
 
 export default useMain
