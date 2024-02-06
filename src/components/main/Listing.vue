@@ -19,7 +19,7 @@ defineProps({
       <div class="flex justify-between text-primary">
         <p class="font-bold" v-text="data.price"/>
 
-        <p class="font-medium">ნახვა</p>
+        <router-link to="/" class="cursor-pointer font-medium">ნახვა</router-link>
       </div>
     </div>
   </div>

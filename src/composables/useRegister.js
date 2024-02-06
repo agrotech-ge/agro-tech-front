@@ -1,7 +1,7 @@
-import {ref} from "vue";
-import {auth} from "../firebase/init";
+import {ref} from "vue"
+import {auth} from "../firebase/init"
 import {createUserWithEmailAndPassword} from 'firebase/auth'
-import {useRouter} from "vue-router";
+import {useRouter} from "vue-router"
 
 export default function useRegister() {
     const router = useRouter()
@@ -12,7 +12,7 @@ export default function useRegister() {
         {placeholder: "სახელი", model: "firstName"},
         {placeholder: "გვარი", model: "lastName"},
         {placeholder: "ქალაქი", model: "city"},
-        {placeholder: "უბანი", model: "distinct"},
+        {placeholder: "ტელ. ნომერი", model: "phoneNumber"},
         {placeholder: "ელ. ფოსტა", model: "email"}
     ];
 
@@ -24,7 +24,7 @@ export default function useRegister() {
         firstName: '',
         lastName: '',
         city: '',
-        distinct: '',
+        phoneNumber: '',
         email: '',
         verCode: '',
     });
@@ -32,7 +32,7 @@ export default function useRegister() {
     const validateFormData = () => {
         const valid = Object.values(formData.value).every(d => d);
         if (valid) {
-            router.push('/auth/registration-step-two/' + formData.value['email']);
+            router.push('/auth/register2/' + formData.value['email']);
         } else {
             alert("შეავსეთ ყველა ველი!")
         }

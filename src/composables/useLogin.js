@@ -12,7 +12,7 @@ export default function useLogin() {
     const handleSubmit = async () => {
         signInWithEmailAndPassword(auth, email.value, password.value)
             .then((response) => {
-                router.push('/main')
+                router.push('/')
                 console.log(response)
             })
             .catch((error) => console.log(error))

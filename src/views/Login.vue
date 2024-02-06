@@ -13,14 +13,14 @@
         <label class="text-sm">დამახსოვრება</label>
       </div>
       <router-link class="text-xs font-semibold text-primary"
-                   to="/recover">
+                   to="/auth/recover">
         დაგავიწყდა?
       </router-link>
     </div>
     <button class="w-full font-medium text-white bg-primary py-[15px] rounded-[5px] mb-[25px] hover:shadow-xl">შესვლა
     </button>
     <h3 class="flex justify-center font-medium uppercase mb-[25px]">ან</h3>
-    <router-link to="/register"
+    <router-link to="/auth/register"
                  class="flex w-full justify-center border font-medium border-primary text-primary py-[15px] rounded-[5px] hover:bg-primary hover:text-white hover:shadow-xl">
       რეგისტრაცია
     </router-link>
