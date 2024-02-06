@@ -1,22 +1,15 @@
 <template>
-  <form @submit.prevent="handleRegister" class="flex flex-col items-center justify-center w-[550px]">
+  <form @submit.prevent="register" class="flex flex-col items-center justify-center w-1/3">
     <h1 class="text-2xl font-bold uppercase text-primary">რეგისტრაცია</h1>
-    <div class="flex w-full flex-col gap-y-[40px] my-[70px]">
-      <template v-for="(field, index) in formFields" :key="index">
-        <AnimatedInputComponent :placeholder="field.placeholder" v-model="formData[field.model]"/>
-      </template>
-      <div class="flex gap-x-2.5">
-        <template v-for="(field, index) in additionalFields" :key="index">
-          <AnimatedInputComponent :placeholder="field.placeholder" v-model="formData[field.model]"/>
-        </template>
-        <button type="button"
-                class="w-1/3 font-medium text-white bg-primary py-[15px] px-[22.5px] rounded-[5px] hover:shadow-xl">
-          გაგზავნა
-        </button>
-      </div>
+
+    <div class="grid grid-cols-2 gap-x-5 gap-y-10 my-16">
+      <AnimatedInputComponent :class="{'col-span-2': index === 4}" v-for="(field, index) in fields" :key="index" :placeholder="field.placeholder"
+                              v-model="data[field.model]" :show-password-toggle="field.isPassword"/>
     </div>
-    <button type="submit"
-            class="w-full font-medium text-white bg-primary py-[15px] rounded-[5px] mb-[25px] hover:shadow-xl">
+
+    <button
+        type="submit"
+        class="w-full font-medium text-white bg-primary py-[15px] rounded-[5px] mb-[25px] hover:shadow-xl">
       შემდეგი
     </button>
   </form>
@@ -27,9 +20,8 @@ import AnimatedInputComponent from "../../components/auth/AnimatedInput.vue";
 import useRegister from "../../composables/useRegister.js";
 
 const {
-  formFields,
-  additionalFields,
-  formData,
-  handleRegister
+  fields,
+  data,
+  register
 } = useRegister();
 </script>

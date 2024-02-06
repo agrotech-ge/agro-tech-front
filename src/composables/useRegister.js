@@ -1,140 +1,45 @@
 import {ref} from "vue"
 import {auth} from "../firebase/init"
 import {createUserWithEmailAndPassword, sendEmailVerification} from 'firebase/auth'
-import {useRouter} from "vue-router"
 
-export default function useRegister() {
-    const router = useRouter()
-    const password = ref('');
-    const repeatPassword = ref('');
-
-    const formFields = [
+const useRegister = () => {
+    const fields = [
         {placeholder: "სახელი", model: "firstName"},
         {placeholder: "გვარი", model: "lastName"},
         {placeholder: "ქალაქი", model: "city"},
         {placeholder: "ტელ. ნომერი", model: "phoneNumber"},
-        {placeholder: "ელ. ფოსტა", model: "email"}
-    ];
+        {placeholder: "ელ. ფოსტა", model: "email"},
+        {placeholder: "პაროლი", model: "password", isPassword: true},
+        {placeholder: "გაიმეორეთ", model: "repeat", isPassword: true}
+    ]
 
-    const additionalFields = [
-        {placeholder: "პინკოდი", model: "verCode"}
-    ];
-
-    const formData = ref({
+    const data = ref({
         firstName: '',
         lastName: '',
         city: '',
         phoneNumber: '',
         email: '',
-        verCode: '',
-    });
+        password: '',
+        repeat: ''
+    })
 
-    const cities = ref([
-        "თბილისი",
-        "ბათუმი",
-        "ქუთაისი",
-        "რუსთავი",
-        "გორი",
-        "ზუგდიდი",
-        "ფოთი",
-        "ხაშური",
-        "სამტრედია",
-        "სენაკი",
-        "ზესტაფონი",
-        "მარნეული",
-        "თელავი",
-        "ახალციხე",
-        "ქობულეთი",
-        "ოზურგეთი",
-        "კასპი",
-        "ჭიათურა",
-        "წყალტუბო",
-        "საგარეჯო",
-        "გარდაბანი",
-        "ბორჯომი",
-        "ტყიბული",
-        "ხონი",
-        "ბოლნისი",
-        "ახალქალაქი",
-        "გურჯაანი",
-        "მცხეთა",
-        "ყვარელი",
-        "ახმეტა",
-        "ქარელი",
-        "ლანჩხუთი",
-        "დუშეთი",
-        "საჩხერე",
-        "დედოფლისწყარო",
-        "ლაგოდეხი",
-        "ნინოწმინდა",
-        "აბაშა",
-        "წნორი",
-        "თერჯოლა",
-        "მარტვილი",
-        "ხობი",
-        "წალენჯიხა",
-        "ვანი",
-        "ბაღდათი",
-        "ვალე",
-        "ჩხოროწყუ",
-        "თეთრიწყარო",
-        "დმანისი",
-        "ონი",
-        "წალკა",
-        "ამბროლაური",
-        "სიღნაღი",
-        "ცაგერი",
-        "ჯვარი",
-        "სოხუმი",
-        "ცხინვალი",
-        "გაგრა",
-        "ოჩამჩირე",
-        "გუდაუთა",
-        "გალი",
-        "ტყვარჩელი",
-        "ახალი ათონი"
-    ]);
-
-    const validateFormData = () => {
-        const valid = Object.values(formData.value).every(d => d);
-        if (valid) {
-            router.push('/auth/register2/' + formData.value['email']);
-        } else {
-            alert("შეავსეთ ყველა ველი!")
-        }
-    }
-
-    const error = ref(null);
-    const isVerifying = ref(false);
-    const isVerified = ref(false);
-    const handleRegister = async () => {
-        error.value = null;
-        isVerifying.value = false;
-        isVerified.value = false;
-
+    const register = async () => {
         try {
-            const userCredential = await createUserWithEmailAndPassword(auth, 'lashadeveloper@gmail.com', '1234567890');
+            const userCredential = await createUserWithEmailAndPassword(auth, data.value.email, data.value.password)
 
-            await sendEmailVerification(userCredential.user, {
-                url: 'http://localhost:5173/auth/register2',
-            });
-
-            isVerifying.value = true;
-            alert('Verification email sent! Please check your inbox and click the link.');
+            await sendEmailVerification(userCredential.user)
+            console.log(data.value)
+            console.log(userCredential.user.uid)
         } catch (error) {
-            error.value = error.message;
             console.log(error)
         }
     }
 
     return {
-        formFields,
-        additionalFields,
-        formData,
-        password,
-        repeatPassword,
-        validateFormData,
-        handleRegister,
-        cities
+        fields,
+        data,
+        register
     }
 }
+
+export default useRegister
