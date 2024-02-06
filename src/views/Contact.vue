@@ -7,7 +7,7 @@ const {data} = useContact()
 
 <template>
   <div class="flex items-center justify-center pt-16 pb-32">
-    <form @submit.prevent="console.log(data)"
+    <form @submit.prevent=""
           class="w-1/4 border border-[#D9D9D9] rounded-md p-16 flex flex-col gap-y-12">
       <div class="grid grid-cols-2 gap-x-4">
         <animated-input placeholder="სახელი" v-model="data.name"/>
