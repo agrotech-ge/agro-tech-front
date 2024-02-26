@@ -8,8 +8,10 @@ defineProps({
 </script>
 
 <template>
-  <div class="flex gap-x-7 shadow-xl rounded p-1.5">
-    <img :src="data?.photo" alt="tractor image">
+  <div class="flex gap-x-7 rounded shadow-xl p-1.5">
+    <router-link to="/">
+      <img class="transition hover:scale-105" :src="data?.photo" alt="tractor image">
+    </router-link>
 
     <div class="flex w-full flex-col justify-between">
       <p class="text-xs font-medium text-gray-500" v-text="data?.publishDate"/>
@@ -19,7 +21,7 @@ defineProps({
       <div class="flex justify-between text-primary">
         <p class="font-bold" v-text="data?.price"/>
 
-        <router-link to="/" class="cursor-pointer font-medium">ნახვა</router-link>
+        <router-link to="/" class="cursor-pointer font-medium underline">ნახვა</router-link>
       </div>
     </div>
   </div>
