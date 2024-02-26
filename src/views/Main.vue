@@ -7,7 +7,7 @@ import Members from "/src/components/main/Members.vue"
 <template>
   <slogan/>
 
-  <div class="flex flex-col gap-y-36 px-16 pt-16 pb-24">
+  <div class="flex flex-col gap-y-32 px-16 pt-16 pb-24">
     <listings/>
 
     <members/>

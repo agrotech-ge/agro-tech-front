@@ -1,13 +1,13 @@
 <script setup>
+import useMain from "/src/composables/useMain"
 import Member from "./Member.vue"
-import useMain from "/src/composables/useMain.js"
 
 const {members} = useMain()
 </script>
 
 <template>
   <section class="flex flex-col gap-y-16">
-    <p class="text-secondary font-medium text-5xl">ჩვენი გუნდი</p>
+    <p class="text-5xl font-medium text-secondary">ჩვენი გუნდი</p>
 
     <div class="grid grid-cols-6 gap-x-10">
       <member v-for="(member, index) in members" :key="index" :data="member"/>

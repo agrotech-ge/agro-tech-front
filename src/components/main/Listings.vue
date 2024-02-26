@@ -10,7 +10,7 @@ const {tractors} = useMain()
     <p class="border-b-2 pb-16 text-5xl font-medium border-b-secondary text-secondary">განცხადებები</p>
 
     <div class="grid grid-cols-2 gap-x-16 gap-y-14">
-      <Listing v-for="(tractor, index) in tractors" :key="index" :data="tractor"/>
+      <listing v-for="(tractor, index) in tractors" :key="index" :data="tractor"/>
     </div>
   </section>
 </template>

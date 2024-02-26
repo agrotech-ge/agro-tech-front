@@ -8,7 +8,7 @@ defineProps({
 </script>
 
 <template>
-  <div class="flex gap-x-7 rounded border border-gray-400 p-1">
+  <div class="flex gap-x-7 shadow-xl rounded p-1.5">
     <img :src="data?.photo" alt="tractor image">
 
     <div class="flex w-full flex-col justify-between">
