@@ -8,7 +8,7 @@ import Copyright from "./Copyright.vue"
 <template>
   <footer class="px-14 py-14 bg-[#2E2E2E] flex flex-col gap-y-10">
     <div class="flex items-start gap-x-14">
-      <img src="/assets/logos/agro-tech.svg" alt="agro tech logo">
+      <img src="/src/assets/logos/agro-tech.svg" alt="agro tech logo">
 
       <div class="flex w-full justify-between">
         <contact/>
