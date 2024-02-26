@@ -1,6 +1,6 @@
-import {ref} from "vue";
+import {ref} from "vue"
 
-const useMain = () => {
+export default function useMain() {
     const tractors = ref([
         {
             photo: '/src/assets/images/tractors/tractor1.svg',
@@ -120,5 +120,3 @@ const useMain = () => {
 
     return {tractors, members, _members}
 }
-
-export default useMain

@@ -8,16 +8,16 @@ defineProps({
 </script>
 
 <template>
-  <div class="flex gap-x-7 border border-[#D9D9D9] rounded p-1">
-    <img :src="data.photo" alt="tractor image">
+  <div class="flex gap-x-7 rounded border border-gray-400 p-1">
+    <img :src="data?.photo" alt="tractor image">
 
-    <div class="flex flex-col justify-between w-full">
-      <p class="text-[#5C5C5C] font-medium text-[12px]" v-text="data.publishDate"/>
+    <div class="flex w-full flex-col justify-between">
+      <p class="text-xs font-medium text-gray-500" v-text="data?.publishDate"/>
 
-      <p class="font-semibold" v-text="data.title"/>
+      <p class="font-semibold" v-text="data?.title"/>
 
       <div class="flex justify-between text-primary">
-        <p class="font-bold" v-text="data.price"/>
+        <p class="font-bold" v-text="data?.price"/>
 
         <router-link to="/" class="cursor-pointer font-medium">ნახვა</router-link>
       </div>

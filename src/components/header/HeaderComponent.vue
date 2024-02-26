@@ -5,7 +5,7 @@ import LanguageSwitcher from "/src/components/header/LanguageSwitcher.vue"
 </script>
 
 <template>
-  <header class="flex items-center justify-between px-14 py-10">
+  <header class="flex items-center justify-between px-16 py-10">
     <logo/>
 
     <navigation-links/>
