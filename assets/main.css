@@ -1,0 +1,61 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+@font-face {
+    font-family: 'Noto Sans Georgian';
+    src: local('NotoSansGeorgian-Black'), url('../public/fonts/NotoSansGeorgian-Black.ttf') format('truetype');
+    font-weight: 900;
+}
+
+@font-face {
+    font-family: 'Noto Sans Georgian';
+    src: local('NotoSansGeorgian-ExtraBold'), url('../public/fonts/NotoSansGeorgian-ExtraBold.ttf') format('truetype');
+    font-weight: 800;
+}
+
+@font-face {
+    font-family: 'Noto Sans Georgian';
+    src: local('NotoSansGeorgian-Bold'), url('../public/fonts/NotoSansGeorgian-Bold.ttf') format('truetype');
+    font-weight: 700;
+}
+
+@font-face {
+    font-family: 'Noto Sans Georgian';
+    src: local('NotoSansGeorgian-SemiBold'), url('../public/fonts/NotoSansGeorgian-SemiBold.ttf') format('truetype');
+    font-weight: 600;
+}
+
+@font-face {
+    font-family: 'Noto Sans Georgian';
+    src: local('NotoSansGeorgian-Medium'), url('../public/fonts/NotoSansGeorgian-Medium.ttf') format('truetype');
+    font-weight: 500;
+}
+
+@font-face {
+    font-family: 'Noto Sans Georgian';
+    src: local('NotoSansGeorgian-Regular'), url('../public/fonts/NotoSansGeorgian-Regular.ttf') format('truetype');
+    font-weight: 400;
+}
+
+@font-face {
+    font-family: 'Noto Sans Georgian';
+    src: local('NotoSansGeorgian-Light'), url('../public/fonts/NotoSansGeorgian-Light.ttf') format('truetype');
+    font-weight: 300;
+}
+
+@font-face {
+    font-family: 'Noto Sans Georgian';
+    src: local('NotoSansGeorgian-ExtraLight'), url('../public/fonts/NotoSansGeorgian-ExtraLight.ttf') format('truetype');
+    font-weight: 200;
+}
+
+@font-face {
+    font-family: 'Noto Sans Georgian';
+    src: local('NotoSansGeorgian-Thin'), url('../public/fonts/NotoSansGeorgian-Thin.ttf') format('truetype');
+    font-weight: 100;
+}
+
+html {
+    font-family: 'Noto Sans Georgian', sans-serif;
+}
