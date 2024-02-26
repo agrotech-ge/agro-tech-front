@@ -27,15 +27,15 @@ export default function useNavigation() {
     const links = [
         {
             url: '#',
-            icon: '<i class="btn glass fa-brands fa-square-facebook text-[#4267B2]"/>'
+            icon: '',
         },
         {
             url: '#',
-            icon: '<i class="btn glass fa-brands fa-instagram text-[#E1306C]"/>'
+            icon: ''
         },
         {
             url: '#',
-            icon: '<i class="btn glass fa-brands fa-twitter text-[#1DA1F2]"/>'
+            icon: ''
         }
     ]
 
