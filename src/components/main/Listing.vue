@@ -9,7 +9,7 @@ defineProps({
 
 <template>
   <div class="flex gap-x-7 rounded shadow-xl p-1.5">
-    <router-link to="/">
+    <router-link :to="`/listings/${data?.id}`">
       <img :src="data?.photo" alt="tractor image">
     </router-link>
 
@@ -21,7 +21,9 @@ defineProps({
       <div class="flex justify-between text-primary">
         <p class="font-bold" v-text="data?.price"/>
 
-        <router-link to="/" class="cursor-pointer font-medium underline">ნახვა</router-link>
+        <router-link :to="`/listings/${data?.id}`" class="cursor-pointer font-medium underline">
+          ნახვა
+        </router-link>
       </div>
     </div>
   </div>
