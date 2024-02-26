@@ -9,7 +9,7 @@ defineProps({
 
 <template>
   <div class="flex flex-col gap-y-3.5" v-if="data">
-    <img class="rounded" :src="data?.photo" alt="member image"/>
+    <img :src="data?.photo" alt="member image"/>
 
     <p class="font-medium" v-text="data?.name"/>
 
