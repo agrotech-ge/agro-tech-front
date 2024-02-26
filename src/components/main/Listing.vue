@@ -1,14 +1,20 @@
 <script setup>
+import {ref} from "vue";
+
 defineProps({
   data: {
     type: Object,
     required: true
   }
 })
+
+const show = ref();
+
+setTimeout(() => show.value = true, 1500)
 </script>
 
 <template>
-  <div class="flex gap-x-7 rounded shadow-xl p-1.5">
+  <div class="flex gap-x-7 rounded shadow-xl p-1.5" v-if="show">
     <router-link to="/">
       <img class="transition hover:scale-105" :src="data?.photo" alt="tractor image">
     </router-link>
@@ -22,6 +28,21 @@ defineProps({
         <p class="font-bold" v-text="data?.price"/>
 
         <router-link to="/" class="cursor-pointer font-medium underline">ნახვა</router-link>
+      </div>
+    </div>
+  </div>
+  <div class="flex gap-x-7 rounded shadow-xl p-1.5" v-else>
+    <div class="skeleton w-36 h-20"/>
+
+    <div class="flex w-full flex-col justify-between">
+      <div class="skeleton w-20 h-3.5"/>
+
+      <div class="skeleton w-full h-4"/>
+
+      <div class="flex justify-between">
+        <div class="skeleton w-24 h-3.5"/>
+
+        <div class="skeleton w-20 h-3.5"/>
       </div>
     </div>
   </div>
