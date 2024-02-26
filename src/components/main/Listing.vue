@@ -1,20 +1,14 @@
 <script setup>
-import {ref} from "vue";
-
 defineProps({
   data: {
     type: Object,
     required: true
   }
 })
-
-const show = ref();
-
-setTimeout(() => show.value = true, 1500)
 </script>
 
 <template>
-  <div class="flex gap-x-7 rounded shadow-xl p-1.5" v-if="show">
+  <div class="flex gap-x-7 rounded shadow-xl p-1.5" v-if="data">
     <router-link to="/">
       <img class="transition hover:scale-105" :src="data?.photo" alt="tractor image">
     </router-link>
@@ -31,6 +25,7 @@ setTimeout(() => show.value = true, 1500)
       </div>
     </div>
   </div>
+
   <div class="flex gap-x-7 rounded shadow-xl p-1.5" v-else>
     <div class="skeleton w-36 h-20"/>
 
