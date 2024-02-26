@@ -1,6 +1,6 @@
 import {ref} from "vue"
 
-const useNavigation = () => {
+export default function useNavigation() {
     const routes = ref([
         {
             title: 'მთავარი',
@@ -24,7 +24,20 @@ const useNavigation = () => {
         }
     ])
 
-    return {routes}
-}
+    const links = [
+        {
+            url: '#',
+            icon: '<i class="btn glass fa-brands fa-square-facebook text-[#4267B2]"/>'
+        },
+        {
+            url: '#',
+            icon: '<i class="btn glass fa-brands fa-instagram text-[#E1306C]"/>'
+        },
+        {
+            url: '#',
+            icon: '<i class="btn glass fa-brands fa-twitter text-[#1DA1F2]"/>'
+        }
+    ]
 
-export default useNavigation
+    return {routes, links}
+}
