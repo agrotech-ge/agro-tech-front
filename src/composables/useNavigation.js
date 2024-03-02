@@ -40,7 +40,7 @@ export default function useNavigation() {
     ]
 
     const isAuthenticated = ref(true)
-    const userName = ref('ვახო')
+    const userName = ref('ლაშა')
 
     return {routes, links, isAuthenticated, userName}
 }

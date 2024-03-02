@@ -7,56 +7,192 @@ export default function useMain() {
             photo: '/src/assets/images/tractors/tractor1.svg',
             publishDate: '2024-02-03 08:30',
             title: 'ქირავდება ტრაქტორი Kubota MU4501, არის იდეალურ მდ...',
-            price: '10,000 ₾'
+            desc: 'იყიდება, არის კარგ მდგომარეობაში',
+            price: '10,000 ₾',
+            full_name: 'გიორგი გიორგაძე',
+            phone_number: '551-11-12-22',
+            specs: {
+                manufacturer: 'Farmtrac',
+                model: 'grandMA',
+                release_year: '2016',
+                fuel_type: 'დიზელი',
+                engine_volume: '3.3',
+                listing_type: 'იყიდება'
+            },
+            photos: [
+                '/src/assets/images/tractor/Rectangle 39.png',
+                '/src/assets/images/tractor/Rectangle 40.png',
+                '/src/assets/images/tractor/Rectangle 41.png',
+                '/src/assets/images/tractor/Rectangle 42.png'
+            ]
         },
         {
             id: 2,
             photo: '/src/assets/images/tractors/tractor2.svg',
             publishDate: '2024-02-03 09:45',
             title: 'იყიდება ტრაქტორი Powertrac Euro...',
-            price: '12,000 ₾'
+            desc: 'იყიდება, არის კარგ მდგომარეობაში',
+            price: '12,000 ₾',
+            full_name: 'გიორგი გიორგაძე',
+            phone_number: '551-11-12-22',
+            specs: {
+                manufacturer: 'Farmtrac',
+                model: 'grandMA',
+                release_year: '2016',
+                fuel_type: 'დიზელი',
+                engine_volume: '3.3',
+                listing_type: 'იყიდება'
+            },
+            photos: [
+                '/src/assets/images/tractor/Rectangle 39.png',
+                '/src/assets/images/tractor/Rectangle 40.png',
+                '/src/assets/images/tractor/Rectangle 41.png',
+                '/src/assets/images/tractor/Rectangle 42.png'
+            ]
         },
         {
             id: 3,
             photo: '/src/assets/images/tractors/tractor3.svg',
             publishDate: '2024-02-03 11:00',
             title: 'ქირავდება',
-            price: '15,000 ₾'
+            desc: 'იყიდება, არის კარგ მდგომარეობაში',
+            price: '15,000 ₾',
+            full_name: 'გიორგი გიორგაძე',
+            phone_number: '551-11-12-22',
+            specs: {
+                manufacturer: 'Farmtrac',
+                model: 'grandMA',
+                release_year: '2016',
+                fuel_type: 'დიზელი',
+                engine_volume: '3.3',
+                listing_type: 'იყიდება'
+            },
+            photos: [
+                '/src/assets/images/tractor/Rectangle 39.png',
+                '/src/assets/images/tractor/Rectangle 40.png',
+                '/src/assets/images/tractor/Rectangle 41.png',
+                '/src/assets/images/tractor/Rectangle 42.png'
+            ]
         },
         {
             id: 4,
             photo: '/src/assets/images/tractors/tractor4.svg',
             publishDate: '2024-02-03 13:15',
             title: 'იყიდება',
-            price: '20,000 ₾'
+            desc: 'იყიდება, არის კარგ მდგომარეობაში',
+            price: '20,000 ₾',
+            full_name: 'გიორგი გიორგაძე',
+            phone_number: '551-11-12-22',
+            specs: {
+                manufacturer: 'Farmtrac',
+                model: 'grandMA',
+                release_year: '2016',
+                fuel_type: 'დიზელი',
+                engine_volume: '3.3',
+                listing_type: 'იყიდება'
+            },
+            photos: [
+                '/src/assets/images/tractor/Rectangle 39.png',
+                '/src/assets/images/tractor/Rectangle 40.png',
+                '/src/assets/images/tractor/Rectangle 41.png',
+                '/src/assets/images/tractor/Rectangle 42.png'
+            ]
         },
         {
             id: 5,
             photo: '/src/assets/images/tractors/tractor5.svg',
             publishDate: '2024-02-03 14:30',
             title: 'იყიდება John Deere 3028EN, საუკეთესო მდგომარებაში...',
-            price: '25,000 ₾'
+            desc: 'იყიდება, არის კარგ მდგომარეობაში',
+            price: '25,000 ₾',
+            full_name: 'გიორგი გიორგაძე',
+            phone_number: '551-11-12-22',
+            specs: {
+                manufacturer: 'Farmtrac',
+                model: 'grandMA',
+                release_year: '2016',
+                fuel_type: 'დიზელი',
+                engine_volume: '3.3',
+                listing_type: 'იყიდება'
+            },
+            photos: [
+                '/src/assets/images/tractor/Rectangle 39.png',
+                '/src/assets/images/tractor/Rectangle 40.png',
+                '/src/assets/images/tractor/Rectangle 41.png',
+                '/src/assets/images/tractor/Rectangle 42.png'
+            ]
         },
         {
             id: 6,
             photo: '/src/assets/images/tractors/tractor6.svg',
             publishDate: '2024-02-03 16:45',
             title: 'ქირავდება John Deere 3028EN, საუკეთ...',
-            price: '30,000 ₾'
+            desc: 'იყიდება, არის კარგ მდგომარეობაში',
+            price: '30,000 ₾',
+            full_name: 'გიორგი გიორგაძე',
+            phone_number: '551-11-12-22',
+            specs: {
+                manufacturer: 'Farmtrac',
+                model: 'grandMA',
+                release_year: '2016',
+                fuel_type: 'დიზელი',
+                engine_volume: '3.3',
+                listing_type: 'იყიდება'
+            },
+            photos: [
+                '/src/assets/images/tractor/Rectangle 39.png',
+                '/src/assets/images/tractor/Rectangle 40.png',
+                '/src/assets/images/tractor/Rectangle 41.png',
+                '/src/assets/images/tractor/Rectangle 42.png'
+            ]
         },
         {
             id: 7,
             photo: '/src/assets/images/tractors/tractor7.svg',
             publishDate: '2024-02-03 18:00',
             title: 'იყიდება',
-            price: '35,000 ₾'
+            desc: 'იყიდება, არის კარგ მდგომარეობაში',
+            price: '35,000 ₾',
+            full_name: 'გიორგი გიორგაძე',
+            phone_number: '551-11-12-22',
+            specs: {
+                manufacturer: 'Farmtrac',
+                model: 'grandMA',
+                release_year: '2016',
+                fuel_type: 'დიზელი',
+                engine_volume: '3.3',
+                listing_type: 'იყიდება'
+            },
+            photos: [
+                '/src/assets/images/tractor/Rectangle 39.png',
+                '/src/assets/images/tractor/Rectangle 40.png',
+                '/src/assets/images/tractor/Rectangle 41.png',
+                '/src/assets/images/tractor/Rectangle 42.png'
+            ]
         },
         {
             id: 8,
             photo: '/src/assets/images/tractors/tractor8.svg',
             publishDate: '2024-02-03 19:15',
             title: 'ქირავდება, სასწრაფოდ',
-            price: '40,000 ₾'
+            desc: 'იყიდება, არის კარგ მდგომარეობაში',
+            price: '40,000 ₾',
+            full_name: 'გიორგი გიორგაძე',
+            phone_number: '551-11-12-22',
+            specs: {
+                manufacturer: 'Farmtrac',
+                model: 'grandMA',
+                release_year: '2016',
+                fuel_type: 'დიზელი',
+                engine_volume: '3.3',
+                listing_type: 'იყიდება'
+            },
+            photos: [
+                '/src/assets/images/tractor/Rectangle 39.png',
+                '/src/assets/images/tractor/Rectangle 40.png',
+                '/src/assets/images/tractor/Rectangle 41.png',
+                '/src/assets/images/tractor/Rectangle 42.png'
+            ]
         }
     ])
 
