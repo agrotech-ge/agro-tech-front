@@ -1,19 +1,26 @@
 <script setup>
-import {onMounted, ref} from "vue"
-import useMain from "../composables/useMain"
-import {useRoute} from "vue-router"
+import {useRoute} from "vue-router";
+import {useListingsStore} from "../stores/useListingsStore"
 
-const {getTractorById} = useMain()
+const store = useListingsStore()
 const route = useRoute()
-const tractor = ref({})
-
-onMounted(() => {
-  tractor.value = getTractorById(Number(route.params.id))
-})
+const listing = store.listings.find(listing => listing.id === route.params.id)
 </script>
 
 <template>
   <section class="flex flex-col gap-y-32 px-16 pt-16 pb-24">
-    {{ tractor }}
+    <div class="flex  space-x-7">
+      <img class="rounded-md" :src="listing?.images[0]" alt="listing image"/>
+
+      <div class="space-y-7">
+        <img class="rounded-md" v-for="(image, index) in listing?.images.slice(1)" :key="index" :src="image"
+             alt="listing image"/>
+      </div>
+
+      <div class="border">
+
+      </div>
+
+    </div>
   </section>
 </template>

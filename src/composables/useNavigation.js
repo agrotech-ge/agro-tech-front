@@ -11,10 +11,6 @@ export default function useNavigation() {
             path: '/listings'
         },
         {
-            title: 'ჩვენს შესახებ',
-            path: '/about'
-        },
-        {
             title: 'კონტაქტი',
             path: '/contact'
         },
@@ -24,23 +20,5 @@ export default function useNavigation() {
         }
     ])
 
-    const links = [
-        {
-            url: '#',
-            icon: '',
-        },
-        {
-            url: '#',
-            icon: ''
-        },
-        {
-            url: '#',
-            icon: ''
-        }
-    ]
-
-    const isAuthenticated = ref(true)
-    const userName = ref('ლაშა')
-
-    return {routes, links, isAuthenticated, userName}
+    return {routes}
 }
