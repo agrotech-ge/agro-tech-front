@@ -39,5 +39,8 @@ export default function useNavigation() {
         }
     ]
 
-    return {routes, links}
+    const isAuthenticated = ref(true)
+    const userName = ref('ვახო')
+
+    return {routes, links, isAuthenticated, userName}
 }
